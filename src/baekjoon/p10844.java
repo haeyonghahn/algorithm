@@ -36,4 +36,5 @@ public class p10844 {
 		System.out.println(sum);
 		input.close();
 	}
+	
 }

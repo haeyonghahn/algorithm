@@ -18,5 +18,4 @@ public class p11727 {
         System.out.println(dp[n]);
         input.close();
 	}
-
 }

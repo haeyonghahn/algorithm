@@ -17,4 +17,5 @@ public class p11726 {
 		System.out.println(array[n]);
 		input.close();
 	}
+	
 }

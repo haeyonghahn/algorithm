@@ -21,5 +21,4 @@ public class p9095 {
 		}
 		input.close();
 	}
-
 }

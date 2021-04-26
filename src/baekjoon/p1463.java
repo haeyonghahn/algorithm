@@ -21,4 +21,5 @@ public class p1463 {
 		System.out.println(array[X]);
 		input.close();
 	}
+	
 }

@@ -29,5 +29,4 @@ public class p11057 {
 		System.out.println(sum);
 		input.close();
 	}
-
 }
