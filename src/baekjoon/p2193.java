@@ -18,4 +18,5 @@ public class p2193 {
 		System.out.println(dp[n]);
 		input.close();
 	}
+	
 }
