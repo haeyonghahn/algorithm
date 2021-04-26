@@ -33,5 +33,4 @@ public class p10992 {
 		}
 		input.close();
 	}
-	
 }
