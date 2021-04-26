@@ -24,5 +24,4 @@ public class p2522 {
 		}
 		input.close();
 	}
-
 }
