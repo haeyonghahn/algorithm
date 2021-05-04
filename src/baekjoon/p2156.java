@@ -14,9 +14,9 @@ public class p2156 {
 			wine[i] = scan.nextInt();
 		
 		dp[1] = wine[1]; 
-		if(n == 2)
+		if(n >= 2)
 			dp[2] = dp[1] + wine[2];
-		else if(n >= 3) {
+		if(n >= 3) {
 			for(int i = 3; i < n+1; i++)
 				dp[i] = Math.max(Math.max(wine[i] + wine[i-1] + dp[i-3], wine[i] + dp[i-2]), dp[i-1]);
 		}
