@@ -28,5 +28,4 @@ public class p11722 {
 		System.out.println(max);
 		input.close();
 	}
-
 }
