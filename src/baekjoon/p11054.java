@@ -4,27 +4,40 @@ import java.util.*;
 
 public class p11054 {
    public static void main(String[] args) {
-       Scanner sc = new Scanner(System.in);
+       Scanner input = new Scanner(System.in);
 
-       int n = sc.nextInt();
-       int[][] dp = new int[n][3]; // 0: vaule, 1: length(<), 2: length(>)
-       int maxLength = 1;
-
-        for (int i = 0; i < n; i++) {
-            int v = sc.nextInt();
-            dp[i][0] = v;
-            dp[i][1] = 1; dp[i][2] = 1;
-            for (int j = 0; j < i; j++) {
-                if (dp[j][0] < v)
-                    dp[i][1] = Math.max(dp[i][1], dp[j][1] + 1);
-                if (dp[j][0] > v) {
-                    dp[i][2] = Math.max(dp[i][2], dp[j][2] + 1);
-                    dp[i][2] = Math.max(dp[i][2], dp[j][1] + 1);
-                }
-            }
-            maxLength = Math.max(maxLength, Math.max(dp[i][1], dp[i][2]));
-        }
-        System.out.println(maxLength);
+       int n = input.nextInt();
+       int[] dp = new int[n];
+       int[] l_dp = new int[n];
+       int[] r_dp = new int[n];
+       
+       for(int i=0; i<n; i++)
+    	   dp[i] = input.nextInt();
+       
+       Arrays.fill(l_dp, 1);
+       Arrays.fill(r_dp, 1);
+       
+       for(int i=0; i<n; i++) {
+    	   for(int j=0; j<i; j++) {
+    		   if(dp[i] > dp[j]) {    			   
+    			   l_dp[i] = Math.max(l_dp[i], l_dp[j] + 1);
+    		   }
+    	   }
+       }
+       for(int i=n-1; i>=0; i--) {    	   
+    	   for(int j=n-1; j>=i; j--) {
+    		   if(dp[i] > dp[j]) {
+    			   r_dp[i] = Math.max(r_dp[i], r_dp[j] + 1);
+    		   }
+    	   }
+       }
+       
+       int max = 0;
+       for(int i=0; i<n; i++) {
+    	   max = Math.max(max, l_dp[i] + r_dp[i]);
+       }
+       System.out.println(max - 1);
+       input.close();
     }
    
 }
