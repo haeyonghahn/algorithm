@@ -39,5 +39,4 @@ public class p11054 {
        System.out.println(max - 1);
        input.close();
     }
-   
 }
