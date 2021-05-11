@@ -22,5 +22,4 @@ public class p1912 {
 		System.out.println(max);
 		input.close();
 	}
-
 }
